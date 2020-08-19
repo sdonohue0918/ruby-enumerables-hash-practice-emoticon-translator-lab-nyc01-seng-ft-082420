@@ -61,5 +61,5 @@ def get_english_meaning(emoticons_file, japanese_emoticon)
     end
 
 
-    ret_string
+      ret_string
     end
