@@ -19,6 +19,36 @@ sorted_hash
 end
 
 
+
+
+def get_japanese_emoticon(emoticons_file, english_emoticon)
+  lexicon = load_library(emoticons_file)
+  binding.pry
+  sorry_message = "Sorry, that emoticon was not found"
+  ret_string=""
+
+
+  lexicon.each do |meaning_key, hash_value|
+    hash_value.each do |lang_key, emoti_value|
+
+      if english_emoticon == emoti_value
+        ret_string = lang_key[:japanese]
+      end
+
+      if english_emoticon != emoti_value
+        ret_string = sorry_message
+      end
+    end
+  end
+
+
+    ret_string
+  end
+
+
+
+
+
 def get_english_meaning(emoticons_file, japanese_emoticon)
     lexicon = load_library(emoticons_file)
     sorry_message = "Sorry, that emoticon was not found"
@@ -41,26 +71,4 @@ def get_english_meaning(emoticons_file, japanese_emoticon)
   end
 
 
-  def get_japanese_emoticon(emoticons_file, english_emoticon)
-    lexicon = load_library(emoticons_file)
-    binding.pry
-    sorry_message = "Sorry, that emoticon was not found"
-    ret_string=""
-
-
-    lexicon.each do |meaning_key, hash_value|
-      hash_value.each do |lang_key, emoti_value|
-
-        if english_emoticon == emoti_value
-          ret_string = lang_key[:japanese]
-        end
-
-        if english_emoticon != emoti_value
-          ret_string = sorry_message
-        end
-      end
-    end
-
-
-      ret_string
-    end
+  
