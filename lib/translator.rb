@@ -15,7 +15,7 @@ def load_library(emoticons_file)
   end
 
 sorted_hash
-# binding.pry
+
 end
 
 
