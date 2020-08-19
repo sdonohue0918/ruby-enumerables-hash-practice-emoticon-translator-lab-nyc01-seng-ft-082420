@@ -21,29 +21,18 @@ end
 
 
 
-def get_japanese_emoticon(emoticons_file, english_emoticon)
-  lexicon = load_library(emoticons_file)
-
-  sorry_message = "Sorry, that emoticon was not found"
-  ret_string=""
-
-
-  lexicon.each do |meaning_key, hash_value|
-    hash_value.each do |lang_key, emoti_value|
-
-      if english_emoticon == emoti_value
-        ret_string = lang_key[:japanese]
-      end
-
-      if english_emoticon != emoti_value
-        ret_string = sorry_message
-      end
+def get_japanese_emoticon(file, eng_emoji)
+  
+  emoticons = load_library(file)
+  emoticons.each do |mood, symbols|
+    
+    if emoticons[mood][:english] == eng_emoji
+      return emoticons[mood][:japanese]
+    
     end
   end
-
-
-    ret_string
-  end
+   return "Sorry, that emoticon was not found" 
+end
 
 
 
