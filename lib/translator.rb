@@ -42,8 +42,6 @@ def get_english_meaning(emoticons_file, japanese_emoticon)
 
 
   def get_japanese_emoticon(emoticons_file, english_emoticon)
-
-
     lexicon = load_library(emoticons_file)
     sorry_message = "Sorry, that emoticon was not found"
     ret_string=""
