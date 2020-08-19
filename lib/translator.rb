@@ -19,6 +19,25 @@ sorted_hash
 end
 
 
+def get_english_meaning(emoticons_file, japanese_emoticon)
+    lexicon = load_library(emoticons_file)
+    sorry_message = "Sorry, that emoticon was not found"
+    ret_string = ""
 
+
+    lexicon.each do |meaning_key, hash_value|
+      hash_value.each do |lang_key, emoti_value|
+        if emoti_value == japanese_emoticon
+          ret_string = meaning_key
+          end
+	end
+        if ret_string == ""
+          ret_string = sorry_message
+        
+      end
+    end
+    ret_string
+
+  end
 
   
