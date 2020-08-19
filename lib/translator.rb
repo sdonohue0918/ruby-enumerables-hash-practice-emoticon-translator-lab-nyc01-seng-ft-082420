@@ -55,6 +55,7 @@ def get_english_meaning(emoticons_file, japanese_emoticon)
         if english_emoticon == emoti_value
           ret_string = lang_key[:japanese]
         end
+      end
         if english_emoticon != emoti_value
           return sorry_message
         end
