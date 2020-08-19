@@ -52,7 +52,7 @@ def get_english_meaning(emoticons_file, japanese_emoticon)
       lexicon.each do |meaning_key, hash_value|
         hash_value.each do |lang_key, emoti_value|
 
-          if english_emoticon == 
+          if english_emoticon ==
             ret_string = meaning_key
           end
         end
