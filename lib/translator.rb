@@ -53,7 +53,7 @@ def get_english_meaning(emoticons_file, japanese_emoticon)
       hash_value.each do |lang_key, emoti_value|
 
         if english_emoticon == emoti_value
-          ret_string = meaning_key
+          ret_string = lang_key[:japanese]
         end
         if english_emoticon != emoti_value
           return sorry_message
