@@ -30,7 +30,7 @@ def get_english_meaning(emoticons_file, japanese_emoticon)
         if emoti_value == japanese_emoticon
           ret_string = meaning_key
           end
-	end
+	       end
         if ret_string == ""
           ret_string = sorry_message
 
