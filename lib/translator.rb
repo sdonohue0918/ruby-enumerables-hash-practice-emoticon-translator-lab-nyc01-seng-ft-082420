@@ -60,6 +60,7 @@ def get_english_meaning(emoticons_file, japanese_emoticon)
           ret_string = sorry_message
         end
       end
+    end
 
 
     ret_string
